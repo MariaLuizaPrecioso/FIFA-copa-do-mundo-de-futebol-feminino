@@ -6,15 +6,18 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #27ae60;
-    color: #2c3e50;
+    font-family: 'Nunito', sans-serif;
+    background-color: #000000;
+    color: #d8ffd2;
     line-height: 1.6;
+    display: grid;
+	place-content: center;
+	min-height: 142vh;
 }
 
 header {
-    background: #2c3e50;
-    color: #fff;
+    background: #10161b;
+    color: #ffffff;
     padding: 1rem 0;
     text-align: center;
 }
@@ -30,13 +33,13 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
-    text-decoration: none;
+    color: #ffffff;
+    text-decoration: underline;
     font-weight: bold;
 }
 
 main {
-    background: #ecf0f1;
+    background: #010700;
     padding: 20px;
     margin-top: 20px;
 }
@@ -57,7 +60,7 @@ h1, h2 {
 }
 
 section {
-    background: #fff;
+    background: #000000;
     padding: 15px;
     margin-bottom: 20px;
     border-radius: 8px;
@@ -93,4 +96,115 @@ section {
     max-width: 80%;
     max-height: 80%;
     border: 5px solid #f1c40f;
+}
+
+/* Código especial para fazer o grid legal funcionar. Inspiração que vi no Instagram da Brasil Code. */
+
+@import url("https://fonts.googleapis.com/css2?family=Figtree&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Figtree", sans-serif;
+}
+
+/* Esse é o body do site inteiro */
+
+body {
+	
+}
+
+/* Aqui ficam as divisões das boxes, como elas vão aparecer no site */
+
+.container {
+	position: relative;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	gap: 1em;
+	width: 1000px;
+	height: 500px;
+	transition: all 400ms;
+}
+
+.container:hover .box {
+	filter: grayscale(100%) opacity(24%);
+}
+
+.box {
+	position: relative;
+	background: var(--img) center center;
+	background-size: cover;
+	transition: all 400ms;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container .box:hover {
+	filter: grayscale(0%) opacity(100%);
+}
+
+.container:has(.box-1:hover) {
+	grid-template-columns: 5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.container:has(.box-2:hover) {
+	grid-template-columns: 1fr 5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.container:has(.box-3:hover) {
+	grid-template-columns: 1fr 1fr 5fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.container:has(.box-4:hover) {
+	grid-template-columns: 1fr 1fr 1fr 5fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.container:has(.box-5:hover) {
+	grid-template-columns: 1fr 1fr 1fr 1fr 5fr 1fr 1fr 1fr 1fr;
+}
+
+.container:has(.box-6:hover) {
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 5fr 1fr 1fr 1fr;
+}
+
+.container:has(.box-7:hover) {
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 5fr 1fr 1fr;
+}
+
+.container:has(.box-8:hover) {
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 5fr 1fr;
+}
+
+.container:has(.box-9:hover) {
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 5fr;
+}
+
+.box:nth-child(odd) {
+	transform: translateY(-16px);
+}
+
+.box:nth-child(even) {
+	transform: translateY(16px);
+}
+
+.box::after {
+	content: attr(data-text);
+	position: absolute;
+	bottom: 20px;
+	background: #000;
+	color: #fff;
+	padding: 10px 10px 10px 14px;
+	letter-spacing: 4px;
+	text-transform: uppercase;
+	transform: translateY(60px);
+	opacity: 0;
+	transition: all 400ms;
+}
+
+.box:hover::after {
+	transform: translateY(0);
+	opacity: 1;
+	transition-delay: 400ms;
 }
