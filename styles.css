@@ -95,7 +95,7 @@ section {
 .modal-image {
     max-width: 80%;
     max-height: 80%;
-    border: 5px solid #f1c40f;
+    border: 5px solid #ffffff;
 }
 
 /* Código especial para fazer o grid legal funcionar. Inspiração que vi no Instagram da Brasil Code. */
@@ -107,12 +107,6 @@ section {
 	padding: 0;
 	box-sizing: border-box;
 	font-family: "Figtree", sans-serif;
-}
-
-/* Esse é o body do site inteiro */
-
-body {
-	
 }
 
 /* Aqui ficam as divisões das boxes, como elas vão aparecer no site */
