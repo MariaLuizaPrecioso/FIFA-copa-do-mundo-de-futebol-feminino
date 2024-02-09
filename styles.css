@@ -9,18 +9,28 @@ body {
     font-family: 'Nunito', sans-serif;
     background-color: #000000;
     color: #d8ffd2;
-    line-height: 1.6;
+    line-height: 1.0;
     display: grid;
 	place-content: center;
 	min-height: 142vh;
 }
 
+/* Esse é o menu que determina onde ficam os anos das Copas */
+
 header {
-    background: #10161b;
+    background: #1d472f;
     color: #ffffff;
-    padding: 1rem 0;
     text-align: center;
 }
+
+/* Banner do blog */
+
+#blog-banner {
+    max-width: 1070px;
+    height: auto;
+}
+
+/* Esse lindão aqui determina as configurações do menu de navegação */
 
 nav ul {
     list-style: none;
@@ -33,20 +43,22 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #ffffff;
+    color: #CDE0C9;
     text-decoration: underline;
     font-weight: bold;
 }
 
+/* Aqui eu mudo as configurações do corpo do site */
+
 main {
-    background: #010700;
+    background: #1d472f;
     padding: 20px;
     margin-top: 20px;
 }
 
 footer {
-    background: #2c3e50;
-    color: #fff;
+    background: #13301f;
+    color: #CDE0C9;
     text-align: center;
     padding: 10px 0;
     position: fixed;
@@ -60,7 +72,7 @@ h1, h2 {
 }
 
 section {
-    background: #000000;
+    background: #13301f;
     padding: 15px;
     margin-bottom: 20px;
     border-radius: 8px;
