@@ -1,4 +1,5 @@
-/* Reset básico para garantir consistência entre navegadores */
+@import url("https://fonts.googleapis.com/css2?family=Nunito&family=Figtree&display=swap");
+
 * {
     margin: 0;
     padding: 0;
@@ -7,118 +8,65 @@
 
 body {
     font-family: 'Nunito', sans-serif;
-    background-color: #000000;
+    background-color: #CDE0C9;
     color: #d8ffd2;
-    line-height: 1.0;
-    display: grid;
-	place-content: center;
-	min-height: 142vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
 }
 
-/* Esse é o menu que determina onde ficam os anos das Copas */
-
-header {
+header, menu, main, footer {
+    width: 90%; 
+    max-width: 1200px; 
     background: #1d472f;
     color: #ffffff;
     text-align: center;
-}
-
-/* Banner do blog */
-
-#blog-banner {
-    max-width: 1070px;
-    height: auto;
-}
-
-/* Esse lindão aqui determina as configurações do menu de navegação */
-
-nav ul {
-    list-style: none;
-    padding: 1rem 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #CDE0C9;
-    text-decoration: underline;
-    font-weight: bold;
-}
-
-/* Aqui eu mudo as configurações do corpo do site */
-
-main {
-    background: #1d472f;
     padding: 20px;
     margin-top: 20px;
 }
 
-footer {
-    background: #13301f;
-    color: #CDE0C9;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-/* Estilos adicionais para elementos específicos e responsividade */
+nav ul li {
+    margin: 10px;
+}
+
+nav ul li a {
+    color: #CDE0C9;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px; 
+    border-radius: 5px; 
+}
+
 h1, h2 {
     color: #f1c40f;
 }
 
-section {
-    background: #13301f;
+section, .modal-background {
     padding: 15px;
-    margin-bottom: 20px;
+    margin: 20px;
+    background: #13301f;
     border-radius: 8px;
 }
 
 @media (max-width: 768px) {
-    nav ul li {
-        display: block;
-        margin: 10px 0;
+    nav ul {
+        flex-direction: column;
     }
-}
-.modal-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s;
+
+    .box {
+        height: 300px; 
+    }
 }
 
 .modal-background.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-.modal-image {
-    max-width: 80%;
-    max-height: 80%;
-    border: 5px solid #ffffff;
-}
-
-/* Código especial para fazer o grid legal funcionar. Inspiração que vi no Instagram da Brasil Code. */
-
-@import url("https://fonts.googleapis.com/css2?family=Figtree&display=swap");
-
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: "Figtree", sans-serif;
+    display: flex;
 }
 
 /* Aqui ficam as divisões das boxes, como elas vão aparecer no site */
@@ -128,8 +76,8 @@ section {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 	gap: 1em;
-	width: 1000px;
-	height: 500px;
+	max-width: 1090px;
+	min-height: 300px;
 	transition: all 400ms;
 }
 
