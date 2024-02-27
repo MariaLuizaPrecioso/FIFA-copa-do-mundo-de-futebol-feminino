@@ -26,6 +26,17 @@ header, menu, main, footer {
     margin-top: 20px;
 }
 
+.gallery {
+    display: inline-block; 
+    text-align: center;
+}
+
+.caption {
+    color: #ffffff; 
+    font-size: 14px; 
+    margin-top: 8px; 
+}
+
 nav ul {
     display: flex;
     flex-wrap: wrap;
