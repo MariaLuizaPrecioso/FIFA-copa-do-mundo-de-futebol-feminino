@@ -28,6 +28,7 @@ header, menu, main, footer {
 
 .gallery {
     display: inline-block; 
+    max-width: 800px; 
     text-align: center;
 }
 
