@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Nunito', sans-serif;
     background-color: #CDE0C9;
@@ -24,6 +28,7 @@ header, menu, main, portfolio, footer {
     text-align: center;
     padding: 20px;
     margin-top: 20px;
+    border-radius: 8px;
 }
 
 .gallery {
@@ -49,7 +54,6 @@ header, menu, main, portfolio, footer {
   
   .author-img {
     border-radius: 50%;
-    margin-right: 40px;
     max-width: 150px; 
   }
   
@@ -69,7 +73,7 @@ header, menu, main, portfolio, footer {
   .contact-form {
     display: inline-block;
     text-align: left;
-    margin-left: 40px;
+    margin-left: 20px;
   }
   
   .form-link {
@@ -122,6 +126,10 @@ section, .modal-background {
 
     .box {
         height: 300px; 
+    }
+    .author-section {
+        display: flex;
+        flex-direction: column;
     }
 }
 
