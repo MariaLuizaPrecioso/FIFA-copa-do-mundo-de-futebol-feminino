@@ -187,37 +187,24 @@ section, .modal-background {
 		max-width: 100%;
 	}
 
-	/* Ajustar o hover para respeitar a nova disposição da grid */
-	.container:has(.box:hover) {
-		grid-template-columns: 3fr repeat(2, 1fr); /* destaca a caixa enquanto mantém 3 colunas */
+	/* Ajustar o hover para cada box individualmente */
+	.container:has(.box-1:hover) { grid-template-columns: 3fr 1fr 1fr; }
+	.container:has(.box-2:hover) { grid-template-columns: 1fr 3fr 1fr; }
+	.container:has(.box-3:hover) { grid-template-columns: 1fr 1fr 3fr; }
+
+	/* Para as boxes nas próximas linhas, ajustamos conforme a nova disposição */
+	.container:has(.box-4:hover), 
+	.container:has(.box-7:hover) {
+		grid-template-columns: 3fr 1fr 1fr; /* destaca a caixa na primeira coluna das linhas subsequentes */
 	}
-}
 
-/* Estilos adicionais para `.box` mantidos como estão */
-.box:nth-child(odd) {
-	transform: translateY(-16px);
-}
+	.container:has(.box-5:hover), 
+	.container:has(.box-8:hover) {
+		grid-template-columns: 1fr 3fr 1fr; /* destaca a caixa na segunda coluna das linhas subsequentes */
+	}
 
-.box:nth-child(even) {
-	transform: translateY(16px);
-}
-
-.box::after {
-	content: attr(data-text);
-	position: absolute;
-	bottom: 20px;
-	background: #000;
-	color: #fff;
-	padding: 10px 10px 10px 14px;
-	letter-spacing: 4px;
-	text-transform: uppercase;
-	transform: translateY(60px);
-	opacity: 0;
-	transition: all 400ms;
-}
-
-.box:hover::after {
-	transform: translateY(0);
-	opacity: 1;
-	transition-delay: 400ms;
+	.container:has(.box-6:hover), 
+	.container:has(.box-9:hover) {
+		grid-template-columns: 1fr 1fr 3fr; /* destaca a caixa na terceira coluna das linhas subsequentes */
+	}
 }
