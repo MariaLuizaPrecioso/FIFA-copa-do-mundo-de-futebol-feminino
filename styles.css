@@ -142,13 +142,14 @@ section, .modal-background {
 .container {
 	position: relative;
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: repeat(9, 1fr);
 	gap: 1em;
 	max-width: 1090px;
 	min-height: 300px;
 	transition: all 400ms;
 }
 
+/* Estilos hover mantidos iguais */
 .container:hover .box {
 	filter: grayscale(100%) opacity(24%);
 }
@@ -163,46 +164,36 @@ section, .modal-background {
 	align-items: center;
 }
 
+/* Regras de hover para cada box */
 .container .box:hover {
 	filter: grayscale(0%) opacity(100%);
 }
 
-.container:has(.box-1:hover) {
-	grid-template-columns: 5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+/* Estilos de hover específicos para cada box */
+.container:has(.box-1:hover) { grid-template-columns: 5fr repeat(8, 1fr); }
+.container:has(.box-2:hover) { grid-template-columns: 1fr 5fr repeat(7, 1fr); }
+.container:has(.box-3:hover) { grid-template-columns: repeat(2, 1fr) 5fr repeat(6, 1fr); }
+.container:has(.box-4:hover) { grid-template-columns: repeat(3, 1fr) 5fr repeat(5, 1fr); }
+.container:has(.box-5:hover) { grid-template-columns: repeat(4, 1fr) 5fr repeat(4, 1fr); }
+.container:has(.box-6:hover) { grid-template-columns: repeat(5, 1fr) 5fr repeat(3, 1fr); }
+.container:has(.box-7:hover) { grid-template-columns: repeat(6, 1fr) 5fr repeat(2, 1fr); }
+.container:has(.box-8:hover) { grid-template-columns: repeat(7, 1fr) 5fr 1fr; }
+.container:has(.box-9:hover) { grid-template-columns: repeat(8, 1fr) 5fr; }
+
+/* Media Query para dispositivos menores */
+@media (max-width: 768px) {
+	.container {
+		grid-template-columns: repeat(3, 1fr); /* 3 colunas em dispositivos menores */
+		max-width: 100%;
+	}
+
+	/* Ajustar o hover para respeitar a nova disposição da grid */
+	.container:has(.box:hover) {
+		grid-template-columns: 3fr repeat(2, 1fr); /* destaca a caixa enquanto mantém 3 colunas */
+	}
 }
 
-.container:has(.box-2:hover) {
-	grid-template-columns: 1fr 5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-}
-
-.container:has(.box-3:hover) {
-	grid-template-columns: 1fr 1fr 5fr 1fr 1fr 1fr 1fr 1fr 1fr;
-}
-
-.container:has(.box-4:hover) {
-	grid-template-columns: 1fr 1fr 1fr 5fr 1fr 1fr 1fr 1fr 1fr;
-}
-
-.container:has(.box-5:hover) {
-	grid-template-columns: 1fr 1fr 1fr 1fr 5fr 1fr 1fr 1fr 1fr;
-}
-
-.container:has(.box-6:hover) {
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 5fr 1fr 1fr 1fr;
-}
-
-.container:has(.box-7:hover) {
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 5fr 1fr 1fr;
-}
-
-.container:has(.box-8:hover) {
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 5fr 1fr;
-}
-
-.container:has(.box-9:hover) {
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 5fr;
-}
-
+/* Estilos adicionais para `.box` mantidos como estão */
 .box:nth-child(odd) {
 	transform: translateY(-16px);
 }
