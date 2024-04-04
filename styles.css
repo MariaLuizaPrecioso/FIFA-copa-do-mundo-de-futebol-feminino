@@ -36,6 +36,7 @@ header, menu, main, portfolio, footer {
     height: auto;  
     display: block;  
     margin: 0 auto;  
+    border-radius: 8px;
 }
 
 .caption {
@@ -148,6 +149,7 @@ section, .modal-background {
 	max-width: 1090px;
 	min-height: 300px;
 	transition: all 400ms;
+	border-radius: 8px;
 }
 
 /* Estilos hover mantidos iguais */
@@ -163,6 +165,7 @@ section, .modal-background {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	border-radius: 8px;
 }
 
 /* Regras de hover para cada box */
@@ -186,6 +189,7 @@ section, .modal-background {
 	.container {
 		grid-template-columns: repeat(3, 1fr); /* 3 colunas em dispositivos menores */
 		max-width: 100%;
+		border-radius: 8px;
 	}
 
 	/* Ajustar o hover para cada box individualmente */
@@ -230,10 +234,12 @@ section, .modal-background {
 	transform: translateY(60px);
 	opacity: 0;
 	transition: all 400ms;
+        border-radius: 8px;
 }
 
 .box:hover::after {
 	transform: translateY(0);
 	opacity: 1;
 	transition-delay: 400ms;
+	border-radius: 8px;
 }
