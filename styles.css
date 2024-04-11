@@ -39,6 +39,17 @@ header, menu, main, portfolio, footer {
     border-radius: 8px;
 }
 
+.gallery img {
+    max-width: 90%; 
+    height: auto; 
+}
+
+@media only screen and (max-width: 600px) {
+    .gallery {
+        max-width: 100%;  
+    }
+}
+
 .caption {
     color: #ffffff; 
     font-size: 14px; 
